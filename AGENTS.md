@@ -1,53 +1,51 @@
-Project: ColegaDeCena V3
+# ColegaDeCena V3
 
-Purpose
+AI rehearsal tool for actors and screenwriters.
 
-A web application that reads film scripts and allows actors to rehearse scenes using AI voices.
+Purpose:
+Allow actors to rehearse scenes using AI voices.
 
-Core workflow
+Main features:
 
-1 Upload script
-2 Parse script
-3 Review parsed script
-4 Choose character
-5 Start rehearsal
-6 Optional audio export
-
-Important constraints
-
-- No database
-- No user accounts
-- Scripts must never be stored
-- Processing must be temporary
-
-Supported formats
-
-FDX (primary)
+1 Script upload
+FDX
 PDF
-Copy and paste text
+TXT
 
-Script elements to detect
+2 Script parsing
+Extract:
+Characters
+Dialogue
+Scene headings
+Action lines
 
-CHARACTER
-DIALOGUE
-ACTION
-PARENTHETICAL
+3 Actor Mode
+User selects one character.
+AI reads all other characters.
 
-Parentheticals like
+4 Voice system
+Uses ElevenLabs API.
+User must provide their own API key.
 
-(V.O.)
-(O.S.)
-(whispering)
+Architecture:
 
-should be ignored by default.
+Frontend
+Next.js
 
-Character names must be normalized to avoid duplicates like
+Modules
 
-CARLOS
-Carlos
-CaRLOS
+parser
+FDX parser
+PDF parser
 
-Languages supported
+audio
+ElevenLabs integration
 
-Portuguese
-English
+components
+UI elements
+
+Future goals
+
+Character voice assignment
+Scene playback
+Mobile friendly interface
